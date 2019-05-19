@@ -1,0 +1,54 @@
+{
+  "name": "loft-taxi",
+  "version": "1.0.0",
+  "description": "loft-taxi application",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Engoldo/loft-taxi.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "redux-saga",
+    "material-ui"
+  ],
+  "author": "Belov Pavel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Engoldo/loft-taxi/issues"
+  },
+  "homepage": "https://github.com/Engoldo/loft-taxi#readme",
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/styles": "^3.0.0-alpha.10",
+    "mapbox-gl": "^0.54.0",
+    "material-ui": "^0.20.2",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "redux-form": "^8.2.0",
+    "redux-form-material-ui": "^4.3.4",
+    "redux-saga": "^1.0.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
