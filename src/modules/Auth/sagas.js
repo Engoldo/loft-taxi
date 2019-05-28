@@ -10,11 +10,12 @@ export function* authPostWorker(action) {
   } catch (error) {
     return { error: error.message };
   }
-};
+}
 
 export function* authWorker(action) {
   yield put(startSubmit("loginform"));
   const { error, success } = yield call(authPostWorker, action);
+
   if (success) {
     yield put(login(success));
   } else {
@@ -26,8 +27,8 @@ export function* authWorker(action) {
       })
     );
   }
-};
+}
 
 export function* authWatcher() {
   yield takeLeading(testAuth.toString(), authWorker);
-};
+}

@@ -13,28 +13,24 @@ const getInitialState = () => {
   } else {
     initialState = {
       isLoggedIn: false,
-      profile: []
+      profile: {}
     };
   }
-
   return initialState;
 };
 
 export const sagaMiddleware = createSagaMiddleware();
 
-const getStore = () => createStore(
-  rootReducer,
-    {
-      authReducer: {
-        ...getInitialState()
-      }
-    },
+const getStore = () =>
+  createStore(
+    rootReducer,
+    { authReducer: { ...getInitialState() } },
     compose(
       applyMiddleware(sagaMiddleware),
       window.__REDUX_DEVTOOLS_EXTENSION__
         ? window.__REDUX_DEVTOOLS_EXTENSION__()
         : noop => noop
     )
-);
+  );
 
 export default getStore;

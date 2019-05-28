@@ -23,7 +23,7 @@ class ProfileForm extends Component {
     isUpdated: false
   };
 
-  requiredFields = ["cardName", "cardNumber", "expdDate", "cvv"];
+  requiredFields = ["cardName", "cardNumber", "expDate", "cvv"];
 
   handleSubmit = values => {
     const { handleProfileSubmit } = this.props;
@@ -140,7 +140,7 @@ class ProfileForm extends Component {
       <Paper className={classes.form}>
         <ProfileAlert
           header="Профиль"
-          body="Платежные данные обновлены. Теперь вы можете заказывать такси."
+          body="Платёжные данные обновлены. Теперь вы можете заказывать такси."
           btnText="перейти на карту"
           linkTo="/map"
         />
@@ -151,7 +151,6 @@ class ProfileForm extends Component {
   render() {
     const { classes, handleSubmit } = this.props;
     const { isUpdated } = this.state;
-
     return (
       <Grid
         container
@@ -174,11 +173,8 @@ const profileSyncValidator = values => {
   const requiredFields = ["cardName", "cardNumber", "expDate", "cvv"];
   const errors = {};
   requiredFields.forEach(field => {
-    if (!values[field]) {
-      errors[field] = "Это обязательное поле";
-    }
+    if (!values[field]) errors[field] = "Это обязательное поле";
   });
-
   return errors;
 };
 
@@ -200,5 +196,5 @@ export default compose(
     mapDispatchToProps
   ),
   withStyles(styles),
-  reduxForm({ from: "profileform", validate: profileSyncValidator })
+  reduxForm({ form: "profileform", validate: profileSyncValidator })
 )(ProfileForm);

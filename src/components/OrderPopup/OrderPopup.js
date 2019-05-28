@@ -47,8 +47,8 @@ class OrderPopup extends Component {
         </Grid>
       </Grid>
     );
-  };
-};
+  }
+}
 
 const mapStateToProps = state => state;
 

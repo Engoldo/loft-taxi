@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
 import Header from "../Menu";
 import PrivateRoute from "../PrivateRoute";
 import LoginForm from "../LoginForm";
@@ -15,8 +16,8 @@ class RootRouter extends Component {
           <Switch>
             <Route path="/login" component={LoginForm} />
             <Redirect path="/" exact to="login" />
-            <PrivateRoute path={"/map"} component={Map} />
-            <PrivateRoute path={"/profile"} component={ProfileForm} />
+            <PrivateRoute path={`/map`} component={Map} />
+            <PrivateRoute path={`/profile`} component={ProfileForm} />
           </Switch>
         </Fragment>
       </BrowserRouter>

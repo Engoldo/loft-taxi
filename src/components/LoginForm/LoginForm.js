@@ -99,24 +99,19 @@ class LoginForm extends Component {
 
 const loginSyncValidator = values => {
   const errors = {};
-
   if (!values.userName) {
     errors.userName = "Надо указать логин";
   } else if (
     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.userName)
   ) {
-    errors.userName = "Тут нужен ваш e-mail";
+    errors.userName = "Неверный e-mail";
   }
-
-  if (!values.userPassword) {
-    errors.userPassword = "Надо указать пароль";
-  }
-
+  if (!values.userPassword) errors.userPassword = "Неверный пароль";
   return errors;
 };
 
 const mapStateToProps = state => ({
-    isLoggedIn: getIsLoggedIn(state)
+  isLoggedIn: getIsLoggedIn(state)
 });
 
 const mapDispatchToProps = { login, testAuth };
@@ -127,8 +122,5 @@ export default compose(
     mapDispatchToProps
   ),
   withStyles(styles),
-  reduxForm({
-    form: "loginform",
-    validate: loginSyncValidator
-  })
+  reduxForm({ form: "loginform", validate: loginSyncValidator })
 )(LoginForm);

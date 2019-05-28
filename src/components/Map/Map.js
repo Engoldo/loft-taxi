@@ -19,7 +19,7 @@ class Map extends Component {
       center: [30.2656504, 59.8029126],
       zoom: 15
     });
-  }
+  };
 
   componentDidUpdate(prevProps) {
     const { isOrderMade, orderCoords } = this.props;
@@ -67,7 +67,7 @@ class Map extends Component {
 
   componentWillUnmount() {
     this.map.remove();
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -77,8 +77,8 @@ class Map extends Component {
         <div className={classes.container} ref={this.mapContainer} />;
       </Fragment>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = state => ({
   orderCoords: getCoords(state),

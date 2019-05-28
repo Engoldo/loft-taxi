@@ -5,7 +5,6 @@ import { getIsLoggedIn } from "../../modules/Auth";
 
 const PrivateRoute = props => {
   const { component: Component, isLoggedIn, ...rest } = props;
-
   return (
     <Route
       {...rest}

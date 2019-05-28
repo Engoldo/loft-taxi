@@ -11,6 +11,11 @@ import { getIsLoggedIn } from "../../modules/Auth";
 import styles from "./MenuStyles";
 
 class Menu extends Component {
+  handleLogout = () => {
+    const { logout } = this.props;
+    logout(false);
+  };
+
   render() {
     const { isLoggedIn, classes } = this.props;
 
@@ -37,12 +42,12 @@ class Menu extends Component {
         </Toolbar>
       </AppBar>
     );
-  }
-}
-
-const mapStateToProps = state => {
-  isLoggedIn: getIsLoggedIn(state);
+  };
 };
+
+const mapStateToProps = state => ({
+  isLoggedIn: getIsLoggedIn(state)
+});
 
 const mapDispatchToProps = { logout };
 

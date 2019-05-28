@@ -175,8 +175,8 @@ class OrderForm extends Component {
         </Grid>
       </Grid>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = state => ({
   isLoadingAddress: getIsLoadingAddresses(state),
